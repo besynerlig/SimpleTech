@@ -6,27 +6,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Import jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="dist/components/reset.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/site.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import Materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-  <link rel="stylesheet" type="text/css" href="dist/components/container.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/grid.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/header.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/image.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/menu.css">
-
-  <link rel="stylesheet" type="text/css" href="dist/components/divider.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/segment.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/form.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/input.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/button.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/list.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/message.css">
-  <link rel="stylesheet" type="text/css" href="dist/components/icon.css">
-
-  <script src="components/form.js"></script>
-  <script src="components/transition.js"></script>
    <style type="text/css">
     body {
       background-color: #DADADA;
@@ -41,41 +27,45 @@
       max-width: 450px;
     }
   </style>
+
   </head>
-   <body class="login">
-   <div class="ui middle aligned center aligned grid">
-  <div class="column">
-    <h2 class="ui teal image header">
-      <div class="content">
-        <?php echo CLAN_NAME; ?> LOGIN
-      </div>
-    </h2>
-    <form class="ui large form" action="login.php">
-      <div class="ui stacked segment">
-        <div class="field">
-          <div class="ui left input">
-            <i class=""></i>
-            <input type="text" name="email" placeholder="Email">
-          </div>
+<body>
+<div class="section"></div>
+   <main>
+    <center>
+    
+        <div  class="z-depth-3 y-depth-3 x-depth-3 grey green-text lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px; margin-top: 100px; solid #EEE;">
+        <div class="section"></div>
+<div class="section"></div>
+            <div class='row'>
+            <h1 class="grey-text" style="font-size: 20px;"> LOGIN </h1>
+              <div class='input-field col s12'>
+                <input class='validate' type="text" name='username' id='email' required />
+                <label for='email'>Username</label>
+              </div>
+            </div>
+            <div class='row'>
+              <div class='input-field col m12'>
+                <input class='validate' type='password' name='password' id='password' required />
+                <label for='password'>Password</label>
+              </div>
+              <label style='float: right;'>
+              <b style="color: #F5F5F5;">Forgot Password?</b>
+              </label>
+            </div>
+            <br/>
+            <center>
+              <div class='row'>
+                <button style="margin-left:65px;"  type='submit' name='btn_login' class='col  s6 btn btn-small white black-text  waves-effect z-depth-1 y-depth-1'>Login</button>
+              </div>
+            </center>
+     
         </div>
-        <div class="field">
-          <div class="ui left input">
-            <i class=""></i>
-            <input type="password" name="password" placeholder="Password">
-          </div>
-        </div>
-        <input name="submit" class="ui fluid large green submit button" type="submit" value="Login"/>
-      </div>
-
-      <div class="ui error message"></div>
-
-    </form>
-
-    <div class="ui message">
-      <a href="#">Register</a>
-    </div>
-  </div>
-</div>
+      
+      </center>
+      </main>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
    </body>
 </html>
 
