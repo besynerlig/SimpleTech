@@ -12,6 +12,10 @@
   <script>window.alert("There was an error logging in, check your login credentials for spelling errors.");</script>
 <?php endif ?>
 
+<?php if (isset($_GET['ude'])): ?>
+  <script>window.alert("There is no account with this username. Please register an account.");</script>
+<?php endif ?>
+
 <div class="section"></div>
    <main>
     <center>

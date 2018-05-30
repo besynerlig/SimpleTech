@@ -9,6 +9,9 @@
 <?php if (isset($_GET['rg'])): ?>
   <script>window.alert("You've now been registered, go to the login page to login when you've been accepted!");</script>
 <?php endif ?>
+<?php if (isset($_GET['nt'])): ?>
+  <script>window.alert("That name is taken, please choose another.");</script>
+<?php endif ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -102,5 +105,18 @@
      </center>
      </main>
 
+ <!--JavaScript at end of body for optimized loading-->
+ <script type="text/javascript" src="../js/materialize.min.js">
+ document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('select').formSelect();
+  });
+        </script>
   </body>
 </html>
