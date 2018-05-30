@@ -1,33 +1,27 @@
 <?php require "../db.php";
 
+  //declare variables
   $username = $password = "";
 
+  //grab the info from the form
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = mysqli_real_escape_string ( $con,  $_POST['username']);
-    $password = $_POST['password'];
+    $username = mysqli_real_escape_string ( $con, $_POST['username']);
+    $password = mysqli_real_escape_string ( $con, $_POST['password']);
 
-    // $hash = $con->query("SELECT password FROM users WHERE username = '$username'")->fetch_object()->password;
-    //
-    // print_r($password);?><br><?php
-    //
-    // $hash2 = password_hash($password, PASSWORD_DEFAULT);
-    // echo $hash2;?><br><?php
-    //
-    // $hash3 = password_hash($password, PASSWORD_DEFAULT);
-    // echo $hash3;?><br><?php
-    //
-    // print_r($hash);?><br><?php
-    //
-    // var_dump(password_verify($password, $hash));
+    //grab the hash from the database
+    $hash = $con->query("SELECT password FROM users WHERE username = '$username'")->fetch_object()->password;
 
+    //verify the password
     if (password_verify($password, $hash)) {
+      //if true, log them in, send them to select deparatment.
       session_start();
       $_SESSION['username'] = $username;
       header("Location: ../seldep.php");
       die();
     }
     else {
-      header("Location: ../index.php?1");
+      //if false, send them back to index with error code
+      header("Location: ../index.php?err");
       die();
     }
   }
