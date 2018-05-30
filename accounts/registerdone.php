@@ -3,7 +3,7 @@
 
 <?php
 //declare the variables
-$username = $email = $password = $password2 = "";
+$username = $email = $password = $password2 = $callsign = $department = $date = $hash = "";
 
 //grab the info from the form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -11,15 +11,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email = mysqli_real_escape_string ( $con,  $_POST['email']);
   $password = mysqli_real_escape_string ( $con,  $_POST['password']);
   $password2 = mysqli_real_escape_string ( $con,  $_POST['password2']);
+  $callsign = mysqli_real_escape_string ( $con,  $_POST['callsign']);
+  $department = mysqli_real_escape_string ( $con,  $_POST['department']);
 
   //check if passwords match
   if ($password == $password2) {
+
     //hash it
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
+    //set a variable with the date for account creation storring
+    $date = date("Y-m-N H:i:s ");
+
     //create the sql querry
-    $sql = "INSERT INTO users (username, email, password)
-    VALUES ('$username', '$email', '$hash')";
+    $sql = "INSERT INTO users (username, email, password, callsign, auth, department, trn_date)
+    VALUES ('$username', '$email', '$hash', '$callsign', '1', '$department', '$date')";
 
     //insert it into the database
     if ($con->query($sql) === TRUE) {

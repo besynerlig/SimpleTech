@@ -4,6 +4,14 @@
     require("head.php");
 ?>
 
+<?php if (isset($_GET['na'])): ?>
+  <script>window.alert("You have not been accepted yet, contact an administrator for further help.");</script>
+<?php endif ?>
+
+<?php if (isset($_GET['err'])): ?>
+  <script>window.alert("There was an error logging in, check your login credentials for spelling errors.");</script>
+<?php endif ?>
+
 <div class="section"></div>
    <main>
     <center>
@@ -33,10 +41,10 @@
             <br/>
             <center>
               <div class='row'>
-                <button style="margin-left:75px;"  type='submit' name='btn_login' class='col  s6 btn btn-small white black-text  waves-effect z-depth-1 y-depth-1'>Login</button>
+                <button style="margin-left:75px;"  type='submit' name='btn_login' class='col  s6 btn btn-small green black-text  waves-effect z-depth-1 y-depth-1'>Login</button>
               </div>
               <div class='row'>
-                <a href="accounts/register.php" style="margin-left:75px;" class='col  s6 btn btn-small white black-text  waves-effect z-depth-1 y-depth-1'>Request access</a>
+                <a href="accounts/register.php" style="margin-left:75px;" class='col  s6 btn btn-small blue black-text  waves-effect z-depth-1 y-depth-1'>Request access</a>
               </div>
             </center>
 

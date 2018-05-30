@@ -21,8 +21,8 @@
            <h1 class="grey-text" style="font-size: 20px;"> REQUEST ACCESS </h1>
            <!-- Defining the username -->
              <div class='input-field col s12'>
-               <input class='validate' type="text" name='username' id='email' required />
-               <label for='email'>Username</label>
+               <input class='validate' type="text" name='username' id='username' required />
+               <label for='username'>Username</label>
              </div>
              <!-- Defining the email -->
              <div class='input-field col s12'>
@@ -41,6 +41,22 @@
                <input class='validate' type='password' name='password2' id='password' required />
                <label for='password'>Confirm password</label>
              </div>
+             <div class="row">
+               <div class='input-field col s12'>
+                 <input class='validate' type='text' name='callsign' id='callsign' />
+                 <label for='callsign'>Callsing</label>
+               </div>
+            </div>
+            <div class="row">
+              <div class='input-field col m12'>
+                <select class='validate' name='department' id='department' required>
+                  <option value="1">Police</option>
+                  <option value="2">Sheriff</option>
+                  <option value="3">Highway</option>
+                </select>
+                <label for='department'>Select department</label>
+              </div>
+           </div>
            </div>
            <br/>
            <center>
