@@ -1,7 +1,6 @@
 <?php
   require("../db.php");
   session_start();
-  require("../head.php");
 ?>
 
 <?php if (isset($_GET['passwordDontMatch'])): ?>
@@ -11,6 +10,35 @@
   <script>window.alert("You've now been registered, go to the login page to login when you've been accepted!");</script>
 <?php endif ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Import jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import Materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+
+   <style type="text/css">
+    body {
+      background-color: #DADADA;
+    }
+    body > .grid {
+      height: 100%;
+    }
+    .image {
+      margin-top: -100px;
+    }
+    .column {
+      max-width: 450px;
+    }
+  </style>
+
+  </head>
+<body>
+
+<div class="section"></div>
   <main>
    <center>
      <form action="registerdone.php" method="post">
@@ -32,32 +60,32 @@
            </div>
            <div class='row'>
              <!-- Defining the password -->
-             <div class='input-field col m12'>
+             <div class='input-field col s12'>
                <input class='validate' type='password' name='password' id='password' required />
                <label for='password'>Password</label>
              </div>
              <!-- Confirming the passwords matching -->
-             <div class='input-field col m12'>
+             <div class='input-field col s12'>
                <input class='validate' type='password' name='password2' id='password' required />
-               <label for='password'>Confirm password</label>
+               <label for='password2'>Confirm password</label>
+             </div>
              </div>
              <div class="row">
+               <div class="input-field col s12">
+                  <select multiple>
+                    <option value="" disabled selected>Choose your department</option>
+                    <option value="1">Police</option>
+                    <option value="2">Sheriff</option>
+                    <option value="3">Highway</option>
+                  </select>
+                  <label>Select department</label>
+                </div>
                <div class='input-field col s12'>
                  <input class='validate' type='text' name='callsign' id='callsign' />
                  <label for='callsign'>Callsing</label>
                </div>
             </div>
-            <div class="row">
-              <div class='input-field col m12'>
-                <select class='validate' name='department' id='department' required>
-                  <option value="1">Police</option>
-                  <option value="2">Sheriff</option>
-                  <option value="3">Highway</option>
-                </select>
-                <label for='department'>Select department</label>
-              </div>
-           </div>
-           </div>
+
            <br/>
            <center>
              <div class='row'>

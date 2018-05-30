@@ -11,7 +11,7 @@ $con = new mysqli(SQL_HOST, SQL_USER, SQL_PASS, SQL_DB);
 
 // Check connection
 if ($con->connect_error) {
-    die("Connection to database failed: " . $conn->connect_error);
+    die("Connection to database failed: " . $con->connect_error);
 }
 
 ?>
